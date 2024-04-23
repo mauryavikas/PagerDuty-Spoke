@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity_profile_scope">
+    <oauth_entity_profile_scope action="INSERT_OR_UPDATE">
+        <oauth_entity_profile display_value="PagerDuty.OAuthProfile.8">1cf67a8497b9c2506bdef141f053aff7</oauth_entity_profile>
+        <oauth_entity_scope display_value="Write Teams">d0f67a8497b9c2506bdef141f053aff1</oauth_entity_scope>
+        <sys_class_name>oauth_entity_profile_scope</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-21 17:36:51</sys_created_on>
+        <sys_id>9cf6ba8497b9c2506bdef141f053af05</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1cf67a8497b9c2506bdef141f053aff7</sys_name>
+        <sys_package display_value="PagerDuty Spoke" source="x_1143793_pd">ad9e002c97e542106bdef141f053af88</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
+        <sys_update_name>oauth_entity_profile_scope_9cf6ba8497b9c2506bdef141f053af05</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-21 17:36:51</sys_updated_on>
+    </oauth_entity_profile_scope>
+</record_update>

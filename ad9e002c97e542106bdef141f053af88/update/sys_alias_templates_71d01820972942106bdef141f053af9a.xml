@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias_templates">
+    <sys_alias_templates action="INSERT_OR_UPDATE">
+        <default_data_template>{&#13;
+    "credential": {&#13;
+        "oauth_entity": {&#13;
+            "oauth_entity_profile": [&#13;
+                {&#13;
+                    "grant_type": "client_credentials",&#13;
+                    "name": "",&#13;
+                    "default": true,&#13;
+                    "oauth_entity_profile_scope": [&#13;
+                        "as_account-us.vondev",&#13;
+                        "licenses.read",&#13;
+                        "users:sessions.read",&#13;
+                        "abilities.read",&#13;
+                        "teams.read",&#13;
+                        "teams.write",&#13;
+                        "users.read",&#13;
+                        "users.write"&#13;
+                    ]&#13;
+                }&#13;
+            ],&#13;
+            "code_challenge_method": "S256",&#13;
+            "type": "consumer",&#13;
+            "oauth_entity_scope": [&#13;
+                {&#13;
+                    "oauth_entity_scope": "as_account-us.vondev",&#13;
+                    "name": "as_account-us"&#13;
+                },&#13;
+                {&#13;
+                    "oauth_entity_scope": "licenses.read",&#13;
+                    "name": "Read Licenses"&#13;
+                },&#13;
+                {&#13;
+                    "oauth_entity_scope": "users:sessions.read",&#13;
+                    "name": "Read User Sessions"&#13;
+                },&#13;
+                {&#13;
+                    "oauth_entity_scope": "abilities.read",&#13;
+                    "name": "Read Abilities"&#13;
+                },&#13;
+                {&#13;
+                    "oauth_entity_scope": "teams.read",&#13;
+                    "name": "Read Teams"&#13;
+                },&#13;
+                {&#13;
+                    "oauth_entity_scope": "teams.write",&#13;
+                    "name": "Write Teams"&#13;
+                },&#13;
+                {&#13;
+                    "oauth_entity_scope": "users.read",&#13;
+                    "name": "Read Users"&#13;
+                },&#13;
+                {&#13;
+                    "oauth_entity_scope": "users.write",&#13;
+                    "name": "Write Users"&#13;
+                }&#13;
+            ],&#13;
+            "name": "PagerDuty Oauth",&#13;
+            "client_id": "",&#13;
+            "client_secret": "",&#13;
+            "default_grant_type": "client_credentials",&#13;
+            "send_client_credentials_as": "request_body_parameter",&#13;
+            "token_url": "https://identity.pagerduty.com/oauth/token",&#13;
+            "access_token_lifespan": "86340",&#13;
+            "use_mutual_auth": false,&#13;
+            "public_client": false&#13;
+        },&#13;
+        "name": "",&#13;
+        "table": "oauth_2_0_credentials"&#13;
+    },&#13;
+    "connection": {&#13;
+        "use_mid": false,&#13;
+        "connection_url": "",&#13;
+        "name": "",&#13;
+        "table": "http_connection"&#13;
+    }&#13;
+}</default_data_template>
+        <dynamic_data_schema>{&#13;
+    "connection_fields": [&#13;
+        {&#13;
+            "name": "connection.name",&#13;
+            "label": "Connection Name",&#13;
+            "type": "text",&#13;
+            "defaultValue": "",&#13;
+            "hint": "Display name for the Connection",&#13;
+            "mandatory": true&#13;
+        },&#13;
+        {&#13;
+            "name": "connection.connection_url",&#13;
+            "label": "Connection URL",&#13;
+            "type": "text",&#13;
+            "defaultValue": "",&#13;
+            "hint": "Connection URL for provider",&#13;
+            "mandatory": true&#13;
+        }&#13;
+    ],&#13;
+    "credential_fields": [&#13;
+        {&#13;
+            "name": "credential.oauth_entity.client_id",&#13;
+            "label": "OAuth Client ID",&#13;
+            "type": "text",&#13;
+            "hint": "Client ID for provider",&#13;
+            "mandatory": true&#13;
+        },&#13;
+        {&#13;
+            "name": "credential.oauth_entity.client_secret",&#13;
+            "label": "OAuth Client Secret",&#13;
+            "type": "password",&#13;
+            "hint": "Client Secret for provider",&#13;
+            "mandatory": true&#13;
+        },&#13;
+        {&#13;
+            "name": "credential.oauth_entity.oauth_entity_profile[0].oauth_entity_profile_scope[0]",&#13;
+            "label": "SubDomain Oauth Profile scope",&#13;
+            "type": "text",&#13;
+            "defaultValue": "as_account-{REGION}.{SUBDOMAIN}",&#13;
+            "hint": "Client Secret for provider",&#13;
+            "mandatory": true&#13;
+        },&#13;
+        {&#13;
+            "name": "credential.oauth_entity.oauth_entity_scope[0].oauth_entity_scope",&#13;
+            "label": "SubDomain Oauth Entity Scope",&#13;
+            "type": "text",&#13;
+            "defaultValue": "as_account-{REGION}.{SUBDOMAIN}",&#13;
+            "hint": "Client Secret for provider",&#13;
+            "mandatory": true&#13;
+        }&#13;
+    ]&#13;
+}</dynamic_data_schema>
+        <name>PagerDuty OAuth Client Credentials Configuration</name>
+        <on_edit_script><![CDATA[(function execute(aliasId, connectionSysId, jsonDefaultData, jsonDynamicData) {
+   // aliasId: sys_id of the alias record
+   // connectionSysId: sys_id of the connection record created by using the default and dynamic data
+   // jsonDefaultData (String): The default JSON template data from template table
+   // e.g. var jsonDefaultParsed = JSON.parse(jsonDefaultData);
+   //      gs.info("default connection url = " + jsonDefaultParsed["connection"]["connection_url"]);
+   // jsonDynamicData (String): User input based on the key/values defined in "Dynamic Data"
+   // e.g. var jsonDynamicParsed = JSON.parse(jsonDynamicData);
+   //      gs.info("dynamic connection url = " + jsonDynamicParsed["connection.connection_url"]);
+	// var jsonDefaultParsed = JSON.parse(jsonDefaultData);
+	// var subDomain=jsonDefaultParsed["credential"]["oauth_entity"]["oauth_entity_scope"][0]["oauth_entity_scope"]["oauth_entity"];
+	
+	// jsonDefaultParsed["credential"]["oauth_entity"]["oauth_entity_scope"][0]["oauth_entity_scope"]["oauth_entity"]=subDomain.concat("1");
+	
+	//gs.info("->On Edit Script: "+new GlideDateTime());
+})(aliasId, connectionSysId, jsonDefaultData, jsonDynamicData);
+]]></on_edit_script>
+        <post_process_script><![CDATA[(function execute(aliasId, connectionSysId, jsonDefaultData, jsonDynamicData) {
+	// aliasId: sys_id of the alias record
+	// connectionSysId: sys_id of the connection record created by using the default and dynamic data
+	// jsonDefaultData (String): The default JSON template data from template table
+	// var jsonDefaultParsed = JSON.parse(jsonDefaultData);
+	// var subDomain=jsonDefaultParsed["credential"]["oauth_entity"]["oauth_entity_scope"][0]["oauth_entity_scope"]["oauth_entity"];
+	
+	// jsonDefaultParsed["credential"]["oauth_entity"]["oauth_entity_scope"][0]["oauth_entity_scope"]["oauth_entity"]=subDomain.concat("1");
+	// jsonDynamicData (String): User input based on the key/values defined in "Dynamic Data"
+	// 	var jsonDynamicParsed = JSON.parse(jsonDynamicData);
+	//    gs.info("dynamic connection url = " + jsonDynamicParsed["connection.connection_url"]);
+	// var jsonDefaultParsed = JSON.parse(jsonDefaultData);
+	// var subDomain=jsonDefaultParsed.credential.oauth_entity.oauth_entity_profile[0].oauth_entity_profile_scope[0];
+	// gs.info("->On Create-> oauth_entity_profile_scope: "+subDomain)
+	// var sub=jsonDefaultParsed["credential"]["oauth_entity"]["oauth_entity_scope"][0]["oauth_entity_scope"]+"1";
+	// jsonDefaultParsed["credential"]["oauth_entity"]["oauth_entity_scope"][0]["oauth_entity_scope"]=jsonDefaultParsed["credential"]["oauth_entity"]["oauth_entity_scope"][0]["oauth_entity_scope"]+"1";
+	// jsonDefaultData=JSON.stringify(jsonDefaultParsed);
+	// gs.info("->On Create->"+sub);
+	// gs.info("->On Create Script 2: "+new GlideDateTime());
+})(aliasId, connectionSysId, jsonDefaultData, jsonDynamicData);
+]]></post_process_script>
+        <pre_edit_script><![CDATA[(function execute(aliasId, connectionSysId, jsonDefaultData, jsonDynamicData) {
+   // aliasId: sys_id of the alias record.
+   // connectionSysId: sys_id of the connection record created by using the default and dynamic data.
+   // jsonDefaultData (String): The default JSON template data from template table.
+   // e.g. var jsonDefaultParsed = JSON.parse(jsonDefaultData);
+   //      gs.info("default connection url = " + jsonDefaultParsed["connection"]["connection_url"]);
+   // jsonDynamicData (String): Current values of Connection and Credential fields (except Password fields) based on the key-value pairs defined in "Dynamic Data".
+   // e.g. var jsonDynamicParsed = JSON.parse(jsonDynamicData);
+   //      gs.info("dynamic connection url = " + jsonDynamicParsed["connection.connection_url"]);
+
+   //returns array of objects. Each object has name-value pairs for populating additional fields values in connections dashboard in the edit view.
+   //In this example script, additionalField1, additionalField2 are additional fields.
+   //Here we define calcAdditionalField1(), calcAdditionalField2() functions in the script
+   //to calculate current values for additionalField1, additionalField2.
+
+   //return [{
+   //         name: "additionalField1"
+   //         value: calcAdditionalField1(),
+   //    },
+   //    {
+   //         name: "additionalField2"
+   //         value: calcAdditionalField2(),
+   //    }
+   //];
+	//gs.info("->Pre-Edit Script: "+new GlideDateTime());
+   return [];
+})(aliasId, connectionSysId, jsonDefaultData, jsonDynamicData);
+]]></pre_edit_script>
+        <sys_class_name>sys_alias_templates</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-10 08:57:44</sys_created_on>
+        <sys_id>71d01820972942106bdef141f053af9a</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>PagerDuty OAuth Client Credentials Configuration</sys_name>
+        <sys_package display_value="PagerDuty Spoke" source="x_1143793_pd">ad9e002c97e542106bdef141f053af88</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
+        <sys_update_name>sys_alias_templates_71d01820972942106bdef141f053af9a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-21 17:34:14</sys_updated_on>
+    </sys_alias_templates>
+</record_update>

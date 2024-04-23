@@ -30,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2cad7de0972d42106bdef141f053af56</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>Look up user active sessions</sys_name>
         <sys_overrides/>
         <sys_package display_value="PagerDuty Spoke" source="x_1143793_pd">ad9e002c97e542106bdef141f053af88</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_2cad7de0972d42106bdef141f053af56</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -575,10 +575,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-10 16:51:26</sys_created_on>
         <sys_id>b7038a20976182106bdef141f053af95</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 16:57:37</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:10:47</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b7038a20976182106bdef141f053af95"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -589,13 +589,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-10 16:51:27</sys_created_on>
         <sys_id>bf038a20976182106bdef141f053afa5</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 16:57:37</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:10:47</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     if (inputs.statusCode == '200') {&#13;
         try {&#13;
-            outputs.user_sessions = JSON.parse(inputs.responseBody);&#13;
+            outputs.user_sessions = JSON.parse(inputs.responseBody).user_sessions;&#13;
         } catch (e) {&#13;
             gs.info("Encountered an error while parsing");&#13;
             throw new Error('Encountered an error. Check logs for more details. ' + e);&#13;
@@ -854,7 +854,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3b038a20976182106bdef141f053af9d</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -862,7 +862,7 @@
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:36</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:10:58</sys_updated_on>
         <type>complex_object_collection</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -1506,14 +1506,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-10 16:29:11</sys_created_on>
         <sys_id>7dfdfd68972182106bdef141f053af6a</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:36</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:10:58</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1540,7 +1540,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>85e402e0976182106bdef141f053af1c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1548,7 +1548,7 @@
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:36</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:10:58</sys_updated_on>
         <type>complex_object_collection</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -1792,17 +1792,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Look up user active sessions">2cad7de0972d42106bdef141f053af56</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"4ebc026c976182106bdef141f053afaa","name":"plan","plan_signature":null}}</plan>
-        <snapshot>3dbc026c976182106bdef141f053af46</snapshot>
+        <snapshot>a57f688397218e106bdef141f053afa3</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-10 17:33:39</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4ebc026c976182106bdef141f053afaa</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:39</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:01</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1929,10 +1929,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-10 17:33:37</sys_created_on>
         <sys_id>35bc026c976182106bdef141f053af12</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=35bc026c976182106bdef141f053af12"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1943,13 +1943,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-10 17:33:38</sys_created_on>
         <sys_id>71bc026c976182106bdef141f053af30</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     if (inputs.statusCode == '200') {&#13;
         try {&#13;
-            outputs.user_sessions = JSON.parse(inputs.responseBody);&#13;
+            outputs.user_sessions = JSON.parse(inputs.responseBody).user_sessions;&#13;
         } catch (e) {&#13;
             gs.info("Encountered an error while parsing");&#13;
             throw new Error('Encountered an error. Check logs for more details. ' + e);&#13;
@@ -2208,7 +2208,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f1bc026c976182106bdef141f053af1c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2216,7 +2216,7 @@
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
         <type>complex_object_collection</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -3207,14 +3207,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-04-10 17:33:38</sys_created_on>
         <sys_id>71bc026c976182106bdef141f053af3c</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3241,7 +3241,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7dbc026c976182106bdef141f053af33</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -3249,7 +3249,7 @@
         <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
         <type>complex_object_collection</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -3437,21 +3437,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
     </sys_hub_action_status_metadata>
-    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=31bc026c976182106bdef141f053af46^sys_idNOT IN75bc026c976182106bdef141f053af46,f1bc026c976182106bdef141f053af46,f5bc026c976182106bdef141f053af46"/>
-    <sys_hub_status_condition action="INSERT_OR_UPDATE">
-        <action_status_metadata_id display_value="Created 2024-04-10 10:33:38">31bc026c976182106bdef141f053af46</action_status_metadata_id>
-        <condition>{{step[3619a201-d0f0-4818-b343-ebe57225f10b].__step_status__.code}}!=0</condition>
-        <dont_treat_as_error>false</dont_treat_as_error>
-        <label>Look up user active sessions step fails</label>
-        <order>2</order>
-        <status>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[3619a201-d0f0-4818-b343-ebe57225f10b].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</status>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-04-10 17:33:38</sys_created_on>
-        <sys_id>75bc026c976182106bdef141f053af46</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
-    </sys_hub_status_condition>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=31bc026c976182106bdef141f053af46^sys_idNOT IN617f688397218e106bdef141f053afa2,697f688397218e106bdef141f053afa2,e57f688397218e106bdef141f053afa2"/>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2024-04-10 10:33:38">31bc026c976182106bdef141f053af46</action_status_metadata_id>
         <condition>{{step[9afc0d70-44bd-4dae-95f2-8102763df729].__step_status__.code}}!=0</condition>
@@ -3460,11 +3446,11 @@
         <order>1</order>
         <status>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[9afc0d70-44bd-4dae-95f2-8102763df729].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</status>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-04-10 17:33:38</sys_created_on>
-        <sys_id>f1bc026c976182106bdef141f053af46</sys_id>
+        <sys_created_on>2024-04-18 05:11:00</sys_created_on>
+        <sys_id>617f688397218e106bdef141f053afa2</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
     </sys_hub_status_condition>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2024-04-10 10:33:38">31bc026c976182106bdef141f053af46</action_status_metadata_id>
@@ -3474,11 +3460,25 @@
         <order>3</order>
         <status>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[bb861f70-21ee-4122-b618-3a1bfcbb2906].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</status>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-04-10 17:33:38</sys_created_on>
-        <sys_id>f5bc026c976182106bdef141f053af46</sys_id>
+        <sys_created_on>2024-04-18 05:11:00</sys_created_on>
+        <sys_id>697f688397218e106bdef141f053afa2</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-10 17:33:38</sys_updated_on>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
+    </sys_hub_status_condition>
+    <sys_hub_status_condition action="INSERT_OR_UPDATE">
+        <action_status_metadata_id display_value="Created 2024-04-10 10:33:38">31bc026c976182106bdef141f053af46</action_status_metadata_id>
+        <condition>{{step[3619a201-d0f0-4818-b343-ebe57225f10b].__step_status__.code}}!=0</condition>
+        <dont_treat_as_error>false</dont_treat_as_error>
+        <label>Look up user active sessions step fails</label>
+        <order>2</order>
+        <status>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[3619a201-d0f0-4818-b343-ebe57225f10b].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</status>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-18 05:11:00</sys_created_on>
+        <sys_id>e57f688397218e106bdef141f053afa2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-18 05:11:00</sys_updated_on>
     </sys_hub_status_condition>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_e9bcce2c976182106bdef141f053afdf^sys_idNOT IN69bcce2c976182106bdef141f053afe6"/>
     <sys_documentation action="INSERT_OR_UPDATE">

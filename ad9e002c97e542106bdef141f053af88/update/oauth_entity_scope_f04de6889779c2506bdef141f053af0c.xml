@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity_scope">
+    <oauth_entity_scope action="INSERT_OR_UPDATE">
+        <in_default_profile>true</in_default_profile>
+        <name>Read User Sessions</name>
+        <oauth_entity display_value="PagerDuty Oauth.5">b44d6a849779c2506bdef141f053aff5</oauth_entity>
+        <oauth_entity_scope>users:sessions.read</oauth_entity_scope>
+        <sys_class_name>oauth_entity_scope</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-21 16:54:34</sys_created_on>
+        <sys_id>f04de6889779c2506bdef141f053af0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Read User Sessions</sys_name>
+        <sys_package display_value="PagerDuty Spoke" source="x_1143793_pd">ad9e002c97e542106bdef141f053af88</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
+        <sys_update_name>oauth_entity_scope_f04de6889779c2506bdef141f053af0c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-21 16:54:34</sys_updated_on>
+    </oauth_entity_scope>
+</record_update>

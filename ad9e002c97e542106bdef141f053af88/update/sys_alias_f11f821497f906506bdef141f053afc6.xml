@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias">
+    <sys_alias action="INSERT_OR_UPDATE">
+        <configuration_template display_value="PagerDuty OAuth Client Credentials Configuration">71d01820972942106bdef141f053af9a</configuration_template>
+        <connection_type>http_connection</connection_type>
+        <id>x_1143793_pd.PagerDuty_dev_aaliyasheikh</id>
+        <is_internal>false</is_internal>
+        <multiple_connections>false</multiple_connections>
+        <name>PagerDuty_dev-aaliyasheikh</name>
+        <parent display_value="x_1143793_pd.PagerDuty">795a946c972942106bdef141f053af7b</parent>
+        <retry_policy display_value="Default HTTP Retry Policy">ef751ff07301330025d71afe2ff6a7f9</retry_policy>
+        <sys_class_name>sys_alias</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-22 09:22:14</sys_created_on>
+        <sys_id>f11f821497f906506bdef141f053afc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1143793_pd.PagerDuty_dev_aaliyasheikh</sys_name>
+        <sys_package display_value="PagerDuty Spoke" source="x_1143793_pd">ad9e002c97e542106bdef141f053af88</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PagerDuty Spoke">ad9e002c97e542106bdef141f053af88</sys_scope>
+        <sys_update_name>sys_alias_f11f821497f906506bdef141f053afc6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-22 09:22:14</sys_updated_on>
+        <type>connection</type>
+    </sys_alias>
+</record_update>
